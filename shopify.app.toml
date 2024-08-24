@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "319e975fc3aeb8055d5eb1560dab080b"
+name = "int-uncode"
+handle = "int-uncode"
+application_url = "https://poverty-besides-devon-how.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "faqv22.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://poverty-besides-devon-how.trycloudflare.com/auth/callback",
+  "https://poverty-besides-devon-how.trycloudflare.com/auth/shopify/callback",
+  "https://poverty-besides-devon-how.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
