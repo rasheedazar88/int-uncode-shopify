@@ -20,7 +20,6 @@ import prisma from "../db.server";
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
   const totalInstalls = await prisma.store.count();
-  console.log("A", totalInstalls)
   return json({totalInstalls});
 };
 
